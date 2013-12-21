@@ -1,0 +1,6 @@
+﻿.navbar-blue .navbar-inner{
+     background-color: blue;
+    background-image: linear-gradient(to bottom, #800080, #800080);
+    background-repeat: repeat-x;
+    border-color: #252525;
+}
