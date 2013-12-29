@@ -1,0 +1,62 @@
+﻿.multitab .modal-content {
+    background-color: transparent;
+    border: 0px;
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+    box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+}
+
+@media screen and (min-width: 768px) {
+    .multitab .modal-content {
+        background-color: transparent;
+        border: 0px;
+        -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+        box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+    }
+}
+
+.multitab .modal-header {
+    background-color: transparent;
+    padding: 0px;
+    border-bottom: 0px;
+    min-height: 0px;
+}
+
+.multitab .modal-body {
+    background-color: transparent;
+    padding: 0px;
+}
+
+.multitab .modal-footer {
+    margin-top: 2px;
+    border-top: 2px;
+    padding: 2px;
+}
+
+
+.multitab .nav > li > a {
+    background-color: black;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid white;
+    border-top: 2px solid black !important;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    color: grey;
+}
+
+    .multitab .nav > li > a:hover {
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: -1px solid white;
+        border-top: 5px solid skyblue !important;
+        color:skyblue;
+    }
+
+.multitab .nav-tabs > li.active > a {
+    background-color: white;
+    color: black;
+    border-top: 2px solid skyblue !important;
+    padding-top: -1px;
+}
