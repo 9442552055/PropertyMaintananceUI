@@ -1,0 +1,9 @@
+﻿<!--this is the template for the button. The buttontype is a controller variable that will determine what the button should look like-->
+<button class="button-primary" 
+    data-ng-class="{'button-danger':(buttonType=='delete')}">
+    
+    <i class="fa" data-ng-class="{'fa-trash-o':buttonType=='delete'}"></i>
+
+    {{buttonText}}
+
+</button>

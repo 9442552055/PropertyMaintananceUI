@@ -1,0 +1,11 @@
+﻿<!--This is the simple modal template we use for showing the modal. All variables are passed to the modals controller by the service-->
+<div class="modal-header">
+    <h3>{{modalTitle}}</h3>
+</div>
+<div class="modal-body">
+    {{modalBody}}
+</div>
+<div class="modal-footer">
+    <button class="button-primary button-alert" ng-click="performOk()">{{okButtonText}}</button>
+    <button class="button-primary button-alert" ng-click="performCancel()">{{cancelButtonText}}</button>
+</div>

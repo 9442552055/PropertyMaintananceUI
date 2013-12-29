@@ -1,0 +1,16 @@
+﻿<span>
+    <div ng-show="isAuthenticated">
+        <!--<a sref="UserProfile">Welcome {{Email}} {{currentUser.lastName}}</a>-->
+        <span style="font-size: 15px; color: white; vertical-align: middle;padding-top:25px">Welcome {{Email}} </span>
+    </div>
+    <form class="navbar-form navbar-right" ng-hide="isAuthenticated">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Password">
+        </div>
+        <button class="btn btn-success" type="submit">Sign in</button>
+        <button class="btn btn-register" ng-click="showRegistration()" type="submit">Register</button>
+    </form>
+</span>

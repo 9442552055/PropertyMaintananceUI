@@ -1,0 +1,1 @@
+﻿var authModule = angular.module("authModule", ['sharedModule', 'ui.router']);

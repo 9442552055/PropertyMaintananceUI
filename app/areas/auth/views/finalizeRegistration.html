@@ -1,0 +1,43 @@
+﻿<div data-tml-box="{{'FINALIZEREGISTRATION' }}">
+
+    <form name="finalizeRegistrationForm" id="finalizeRegistrationForm" novalidate>
+    <div>
+        <div class="change-password">
+            <div class="row">
+                <div class="col-lg-4">
+                    <input id="newPassword" password-validator class="change-password-input" type="password" placeholder="{{newPasswordDecription}}" data-ng-model="finalizeRegistrationModel.password"/>
+                </div>
+                <div class="col-lg-4">
+                    <div class="password-rule-info">
+                        <ul>
+                            <li ng-repeat="info in passwordRulesInfo" ng-class="info.style">
+                                <span class="fa fa-square-o" ng-show="!info.isValid"></span>
+                                <span class="fa fa-check-square-o" ng-show="info.isValid"></span>
+                                {{"Atleast" }}<strong>{{ info.Message }}</strong></li>
+                            <li>
+                                <span class="fa fa-square-o" ng-show="isConfirmPasswordValid()==''">{{" "}}{{ "ConfirmPasswordNotEqual" }}</span>
+                                <span class="Invalid fa fa-square-o" ng-show="isConfirmPasswordValid()=='Invalid'">{{" "}}{{ "ConfirmPasswordNotEqual" }}</span>
+                                <span class="valid fa fa-check-square-o" ng-show="isConfirmPasswordValid()=='valid'">{{" "}}{{ "ConfirmPasswordEqual" }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <input id="confirmPassword" password-validator class="change-password-input" type="password" placeholder="{{confirmPasswordDecription}}" data-ng-model="finalizeRegistrationModel.confirmPassword" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <input type="checkbox" name="confirm" id="confirmtext" data-ng-model="finalizeRegistrationModel.hasAcceptedDisclaimer" />
+                    {{"ConfirmText" }}
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="footer">
+        <button class="button-primary button-alert" ng-click="validateChangePassword(passwordRulesInfo)">{{'FINALIZEREGISTRATION' }}</button>
+        <button class="button-primary button-alert" ng-click="cancelFinalizeRegistration()">{{'CANCEL' }}</button>
+    </div>
+</form>

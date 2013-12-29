@@ -1,0 +1,13 @@
+﻿<ul class="list-unstyled">
+    <li data-ng-repeat="menuItem in menuItems"><a href="{{menuItem.URL}}" data-ng-click="open=!open" data-toggle="collapse" data-target="#menuitem_{{instance}}_{{$index}}">
+        <h5><i class="fa" data-ng-class="{'fa-chevron-up':open,'fa-chevron-down':!open}"></i>&nbsp;{{menuItem.Title }}</h5>
+    </a>
+        <ul class="list-unstyled collapse" id="menuitem_{{instance}}_{{$index}}">
+            <li class="active" data-ng-repeat="childMenu in menuItem.SubMenuItems">
+                <a href="{{childMenu.URL}}"><i class="fa fa-{{childMenu.Icon}}"></i>&nbsp;{{childMenu.Title }}
+                    <span id="childMenu.Id" class="{{childMenu.ExtraInfo.BadgeStyle}}">{{childMenu.ExtraInfo.BadgeInfo}}</span><!--{{childMenu.badgeText}}-->
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,56 @@
+﻿<div class="toolbar-mobile" data-ng-class="{'toolbar-mobile-sidebar':$root.enable_menu==true}">
+    <div class="toolbar-mobile-row1">
+
+        <div class="toolbar-mobile-content">
+            <div class="toolbar-mobile-auth toolbar-content-margin-left">
+                <ul>
+                    <li id="{{lang.ISOName}}" class="float-left" data-ng-repeat="lang in languages">
+                        <button class="button-toolbar toolbar-mobile-lang-button" data-ng-click="changeLanguage(lang)">{{lang.ISOName}}</button>
+                    </li>
+
+
+                    <li class="dropdown float-left" data-ng-show="isAuthenticated()">
+                        <button class="button-toolbar dropdown-toggle">
+                            <i class="fa fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu toolbar-auth-dropdown toolbar-mobile-auth-dropdown">
+                            <li><a role="menuitem" tabindex="-1" href="#/users/{{currentUser.Key}}"><i class="fa fa-user"></i>&nbsp;{{"PROFILE"}}</a></li>
+                            <li><a role="menuitem" tabindex="-1" data-ng-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;{{"LOGOUT"}}</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown float-left" data-ng-hide="isAuthenticated()">
+                        <button class="button-toolbar dropdown-toggle">
+                            <i class="fa fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu toolbar-auth-dropdown toolbar-mobile-auth-dropdown">
+                            <li><a role="menuitem" data-ng-click="showLogin()"><i class="fa fa-lock"></i>&nbsp;{{"LOGIN"}}</a></li>
+                            <li><a role="menuitem" data-ng-click="showRegistration()"><i class="fa fa-users"></i>&nbsp;{{"REGISTER"}}</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="toolbar-mobile-logo">
+            <img src="" data-ng-src="{{$root.provideImage('logo')}}" height="35" />
+        </div>
+
+    </div>
+
+
+
+    <div class="toolbar-mobile-row2" >
+        <div class="toolbar-mobile-search">
+            <div class="toolbar-search-container">
+                <input type="text" class="toolbar-search-input" placeholder="{{'SEARCHTEXT' }}" />
+                <div class="toolbar-search-button">
+                    <button type="button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>

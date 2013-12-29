@@ -1,0 +1,103 @@
+﻿<div class="toolbar">
+
+    <div ng-cloak>
+        <!-- NAVBAR-->
+        <div class="navbar-wrapper">
+            <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+            <div class="container">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="#">
+                            <img class="icon" src="Images/blue-house-hi.png">
+                        </a>
+                        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                        <div class="nav-collapse collapse" nav-highlight-active>
+                            <ul class="nav">
+                                <li data-match-route="/Home/Index" data-match-route-default=""><a href="#/Home">Home</a></li>
+                                <li data-match-route="/AboutUs"><a href="#/AboutUs">About Us</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
+                                    <ul class="dropdown-menu span2">
+                                        <li class="nav-header">Mandatory masters</li>
+                                        <li><a href="#/Masters/Apartments">Apartment</a></li>
+                                        <li><a href="#/Masters/Tenants">Tenant</a></li>
+                                        <li><a href="#/Masters/Amenities">Amenities</a></li>
+                                        <li class="divider"></li>
+                                        <li class="nav-header">Utility masters</li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
+                                    <ul class="dropdown-menu span3">
+                                        <li class="nav-header">Tenancy</li>
+                                        <li><a href="#">Start Tenancy</a></li>
+                                        <li><a href="#">Add tenancy agreement</a></li>
+                                        <li><a href="#">End tenancy</a></li>
+                                        <li class="divider"></li>
+                                        <li class="nav-header">Payments</li>
+                                        <li><a href="#">Rent Payments</a></li>
+                                        <li><a href="#">Service Payments</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <div style="min-width: 100px">
+                            </div>
+
+
+                                <div class="toolbar-auth">
+                                    <button class="button-toolbar" data-ng-hide="isAuthenticated()" data-ng-click="showLogin()"><i class="fa fa-lock"></i><span class="toolbar-auth-button-text">&nbsp;{{'LOGIN' }}</span></button>
+                                    <button class="button-toolbar" data-ng-hide="isAuthenticated()" data-ng-click="showRegistration()"><i class="fa fa-users"></i><span class="toolbar-auth-button-text">&nbsp;{{'REGISTER' }}</span></button>
+                                    <span class="dropdown">
+                                        <span class="button-toolbar dropdown-toggle" data-ng-show="isAuthenticated()">
+                                            <i class="fa fa-user"></i><span class="hidden-sm toolbar-user-greeting-text">&nbsp;{{currentUser.FirstName}} &nbsp; <span class="caret"></span></span>
+                                        </span>
+                                        <ul class="dropdown-menu toolbar-auth-dropdown">
+                                            <li><a role="menuitem" tabindex="-1" href="#/users/{{currentUser.Key}}"><i class="fa fa-user"></i>&nbsp;{{"PROFILE"}}</a></li>
+                                            <li><a role="menuitem" tabindex="-1" data-ng-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;{{"LOGOUT"}}</a></li>
+                                        </ul>
+                                    </span>
+                                </div>
+                        </div>
+                        <!-- /.navbar-inner -->
+                    </div>
+                    <!-- /.navbar -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.navbar-wrapper -->
+        </div>
+        <!-- Header  -->
+        <header class="header">
+            <!--<img src="" alt="">-->
+            <div ng-controller="homePageCarousalController">
+                <div style="height: 305px">
+                    <carousel interval="myInterval">
+                                <slide ng-repeat="slide in slides" active="slide.active">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    <div class="carousel-caption">
+                                      <h4>Slide {{$index}}</h4>
+                                      <p>{{slide.text}}</p>
+                                    </div>
+                                </slide>
+                            </carousel>
+                </div>
+            </div>
+            <div class="container">
+                <div class="header-empty-top">
+                </div>
+            </div>
+        </header>
+        <!-- /.header -->
+    </div>
+
+
+
+</div>

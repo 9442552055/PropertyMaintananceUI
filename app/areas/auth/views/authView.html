@@ -1,0 +1,161 @@
+﻿<div class="authModal">
+    <div class="modal-header"></div>
+    <div class="modal-body" data-ng-controller="authModule.authModalController">
+        <tabset>
+            <div class="modal-close-button" data-ng-click="closeButton()"><a href="#">&times;</a></div>
+
+                <tab select="goToLogin()" heading="{{'LOGIN' }}" active="activeStates.loginActive">             
+                    <div class="auth-tab-content" data-ng-controller="authModule.loginController">
+                        
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="alert alert-danger" data-ng-show="loginReason">{{loginReason}}</div>
+                                <div class="alert alert-danger" data-ng-show="loginError">{{loginError}}</div>   
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7 col-md-7">
+                                 <h2 class="bottomMarginMedium">{{'LOGIN' }}</h2>
+                                <form name="form-signin" novalidate class="form-signin" autocomplete="off">
+                                        <div>
+                                            <input type="text" name="username" id="username" class="auth-box-input hide-errors hide-validation" placeholder="{{'USERNAME' }}" data-ng-model="loginUser.username" required="" autofocus="">
+                                        </div>
+                                        <div>
+                                            <input type="password" name="password" id="password" class="auth-box-input hide-errors hide-validation" placeholder="{{'PASSWORD' }}" data-ng-model="loginUser.password" required="">
+                                        </div>
+                                        <div class="topMarginMedium">
+                                            <button class="button-primary button-success button-auth" data-ng-click="login()" data-ng-disabled="form-signin.$invalid">{{"LOGIN" }}</button>
+                                            <button class="button-primary button-dark button-auth" data-ng-click="clearLogin()">{{"CLEAR" }}</button>
+                                            <button class="button-primary button-danger button-auth" data-ng-click="cancelLogin()">{{"CANCEL" }}</button>
+                                            <div class="toolbar-loader hidden-xs hidden-sm">
+                                                <div data-ng-show="loading" class="toolbar-spinner"><img src="Images/spinner.gif" /></div>
+                                            </div> 
+                                        </div>
+                                </form>
+                                <div class="topMarginMedium">
+                                    <div class="row">
+                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"GOTOREGISTERTEXT" }}</a></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><a ng-click="goToPassword()">{{"GOTOLOSTPASSWORDTEXT" }}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>  
+                    
+                    
+                         
+                </tab>
+                <tab select="goToRegister()" heading="{{'REGISTER' }}" active="activeStates.registerActive">
+                     <div class="auth-tab-content">
+                         <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="alert alert-warning" ng-show="registerReason">{{registerReason}}</div>
+                                <div class="alert alert-danger" ng-show="registerError">{{registerError}}</div>
+                             </div>
+                        </div>
+                         <div class="row" >
+                             <div class="col-sm-12 col-md-12">
+                                  <form name="RegisterForm" novalidate class="form-register" autocomplete="off" data-ng-class="{'showerrors':showErrors}">                                       
+                                        <div class="row">
+                                            <div class="col-md-7" >
+                                                <h2 class="bottomMarginMedium">{{'REGISTER' }}</h2>
+                                                <div class="bottomMarginSmall">
+                                                    <input type="email" name="email" id="email" placeholder="{{'EMAILADDRESS' }}" data-ng-model="registerUser.email" data-ng-class="validation.email" data-ng-minlength="6" data-ng-maxlength="100" required>
+                                                    <div class="form-error" data-ng-show="!RegisterForm.email.$valid && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"EmailIdRequired" }}</div>
+                                                </div>
+                                                <div class="bottomMarginMedium">
+                                                    <input type="email" name="confirmEmail" id="confirmEmail" placeholder="{{'EMAILADDRESSFORVERIFICATION' }}" data-ng-minlength="6" data-ng-maxlength="100" data-ng-model="registerUser.confirmEmail" data-ng-class="{'custom-invalid-always':(registerUser.email != registerUser.confirmEmail)}" required>                                            
+                                                    <div class="form-error" data-ng-show="(registerUser.email != registerUser.confirmEmail) && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"ConfirmationEmail" }}</div>
+                                                    </div>
+                                                <div class="bottomMarginSmall">
+                                                    <input type="password" name="password" id="registerpassword" placeholder="{{'PASSWORD' }}" data-ng-model="registerUser.password" required>
+                                                    <div class="form-error" data-ng-show="(!RegisterForm.password.$valid) && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"PasswordRequired" }}</div>
+                                                </div>
+                                                <div class="bottomMarginMedium">
+                                                    <input id="registerConfirmPassword" type="password" placeholder="{{'CONFIRMPASSWORD' }}" data-ng-model="registerUser.confirmPassword"  data-ng-class="{'custom-invalid-always':registerUser.password != registerUser.confirmPassword}" required />
+                                                    <div data-ng-show="registerUser.password != registerUser.confirmPassword && showErrors" class="form-error"><i class="fa fa-warning"></i>&nbsp;{{"ConfirmPassword" }}</div>
+                                                </div>
+                                                <div>
+
+                                                    <!--<div data-ng-repeat="language in languageList">
+                                                        <input type="radio" data-ng-model="registerUser.language" id="{{language.Code}}" value="{{language.Code}}" />&nbsp;<label for="{{language.Code}}">{{language.Value}}</label>
+                                                </div>
+                                           -->
+                                                    
+                                                </div>
+                                               <!-- <div>
+                                                    <span  vc-recaptcha key="6LesDugSAAAAAIK-BYNTj2HiYhHPikIa8LyrWZa5" theme="clean" data-ng-model="user.captcha"></span>
+                                                </div>       -->                                         
+                                                <div>
+                                                     <div class="topMarginMedium">
+                                        <button type="submit" data-ng-click="register()" class="button-primary button-success button-auth">{{"REGISTER" }}</button>
+                                        <button class="button-primary button-dark button-auth" data-ng-click="clearRegister()">{{"CLEAR" }}</button>
+                                        <button class="button-primary button-danger button-auth" data-ng-click="cancelRegister()">{{"CANCEL" }}</button>
+                                            <div class="toolbar-loader hidden-xs hidden-sm">
+                                                <div data-ng-show="loading" class="toolbar-spinner"><img src="Images/spinner.gif" /></div>
+                                            </div> 
+                                    </div>
+                                                </div>
+                                            </div>
+                                             <!--<div class="col-md-6">
+                                                <input type="image" style="max-width: 195px;" src="\theme\default\img\social\LogIn_facebook.png" />
+                                                <input type="image" style="max-width: 195px;" src="\theme\default\img\social\LogIn_google.png" />
+                                            </div>-->
+                                            </div>
+                                      </form>
+                                 <div class="topMarginMedium">
+                                    <div class="row">
+                                        <div class="col-md-12"><a data-ng-click="goToLogin()">{{"GOTOLOGINTEXT" }}</a></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><a data-ng-click="goToPassword()">{{"GOTOLOSTPASSWORDTEXT" }}</a></div>
+                                    </div>
+                                </div>
+                                 </div>
+                             </div>
+                         </div>
+                </tab>
+                <tab select="goToPassword()" heading="{{'RECOVERPASSWORD' }}" active="activeStates.passwordActive">
+                    <div class="auth-tab-content">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="alert alert-danger" data-ng-show="passwordError">{{passwordError}}</div>
+                                </div>
+                             </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                 <h2 class="bottomMarginMedium">{{'RECOVERPASSWORD' }}</h2>
+                                <form name="passwordLostForm">
+                                    <div>
+                                        <input type="email" name="email" id="Text2" class="auth-box-input" placeholder="{{'EMAILADDRESS' }}"  data-ng-model="passwordUser.email" required="" autofocus="">
+                                    </div>
+                                    <!--<input name="requestPassword" id="requestPassword" type="submit" ng-click="requestPassword()" ng-disabled="form.$invalid" class="btn btn-success" value="Request password">-->
+                                    <div class="topMarginMedium">
+                                        <button type="submit" data-ng-click="resetPassword()" class="button-primary button-success button-auth">{{"REQUESTNEWPASSWORD" }}</button>
+                                        <button class="button-primary button-dark button-auth" ng-click="clearPassword()">{{"CLEAR" }}</button>
+                                        <button class="button-primary button-danger button-auth" ng-click="cancelPassword()">{{"CANCEL" }}</button><!--data-ng-disabled="passwordLostForm.$invalid"-->
+                                        <div class="toolbar-loader hidden-xs hidden-sm">
+                                            <div data-ng-show="loading" class="toolbar-spinner"><img src="Images/spinner.gif" /></div>
+                                        </div> 
+                                    </div>
+                                </form>
+                                <div class="topMarginMedium">
+                                    <div class="row">
+                                        <div class="col-md-12"><a ng-click="goToLogin()">{{"GOTOLOGINTEXT" }}</a></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"GOTOREGISTERTEXT" }}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+    </tabset>
+    </div>
+    <div class="modal-footer"></div>
+</div>
+

@@ -1,4 +1,4 @@
-﻿var pmModule = angular.module('pmModule', ['ui.bootstrap.carousel']);
+﻿var pmModule = angular.module('pmModule', ['ui.bootstrap', 'screenstructureModule', 'ui.bootstrap.carousel',  'ngSanitize']);
 
 pmModule.controller('homePageCarousalController', ['$scope',function ($scope) {
 

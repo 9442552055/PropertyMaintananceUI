@@ -1,0 +1,4 @@
+﻿<button class="button-primary" data-ng-class="{'button-success':(type=='save' || type=='add' || type=='edit' || type=='unblock' || type=='approve'),'button-danger':(type=='delete' || type=='block'),'button-dark':(type=='cancel')}" data-ng-click="$event.stopPropagation();action();">
+    <i class="fa" data-ng-class="{'fa-floppy-o':type=='save','fa-plus':type=='add','fa-trash-o':type=='delete','fa-pencil-square-o':type=='edit','fa-lock':type=='block','fa-ban':type=='unblock','fa-arrow-circle-left':type=='cancel','fa-check':type=='approve'}"></i> 
+    <span data-ng-class="{'button-text-responsive':responsive=='true'}" data-ng-transclude></span>
+</button>
