@@ -2,7 +2,6 @@
 .auth-outer-box {
     width: 100%; /* Firefox needs this */
     height: 100%; /* Height can be anything */
-
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
@@ -15,7 +14,6 @@
     display: box;
     box-pack: center;
     box-align: center;
-
     background: #00ADFF; /* Old browsers */
 }
 
@@ -38,13 +36,12 @@
 .auth-box-goback {
     float: right;
     font-size: 16px;
+}
 
-    a {
+    .auth-box-goback a {
         color: #000000;
         text-decoration: none;
     }
-}
-
 
 .auth-box-title {
     font-size: 16px;
@@ -70,6 +67,7 @@
 }
 
 .auth-tab-content {
+    margin-left: 30px; /* added margin*/
     padding: 30px;
     background-color: white;
 }
@@ -78,4 +76,3 @@
 .in-bodyView {
     height: 100%;
 }
-
