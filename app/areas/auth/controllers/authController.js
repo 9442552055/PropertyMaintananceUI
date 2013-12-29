@@ -144,8 +144,8 @@ function ($scope, authService, $timeout, $rootScope, authRetryQueue) {
                 authService.requestCurrentUser()
                     .then(function (data) {
                         $rootScope.currentUser = data;
-                        var lang = languageService.getLanguage(data.LanguageId);
-                        languageService.setCurrentLanguage(lang);
+                        //var lang = languageService.getLanguage(data.LanguageId);
+                        //languageService.setCurrentLanguage(lang);
                         //As rootscope is being watched inorder to refresh Toolbar, $apply() may trigger $watch
                         if ($rootScope.$$phase != '$apply' && $rootScope.$$phase != '$digest') {
                             $rootScope.$apply();
