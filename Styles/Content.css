@@ -1,47 +1,238 @@
-﻿.content 
-{
-	  padding-right: 20px;
-  padding-left: 20px;
-  *zoom: 1;
-}
+﻿
 
- .row-fluid {
-    width: 100%;
-    *zoom: 1;
-  }
-  
-  
-  html, body {
-  height: 100%;
+  /* 
+    Document   : footer
+    Created on : Sep 18, 2013, 4:18:05 PM
+    Author     : arunmozhi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.header {
+    /*    background-color: #131722;*/
+
+    /*  background-color: #1b1b1b;
+      background-image: -moz-linear-gradient(top, #e2e2e2, #79bedd);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e2e2e2), to(#79bedd));
+      background-image: -webkit-linear-gradient(top, #e2e2e2, #79bedd);
+      background-image: -o-linear-gradient(top, #e2e2e2, #79bedd);
+      background-image: linear-gradient(to bottom, #e2e2e2, #79bedd);
+      background-repeat: repeat-x;
+      border-color: #79bedd;*/
+    background-color: #1b1b1b;
+    background-image: -moz-linear-gradient(top, #CCE5FF, #ffffff);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CCE5FF), to(#ffffff));
+    background-image: -webkit-linear-gradient(top, #CCE5FF, #ffffff);
+    background-image: -o-linear-gradient(top, #CCE5FF, #ffffff);
+    background-image: linear-gradient(to bottom, #CCE5FF, #ffffff);
+    background-repeat: repeat-x;
+    border-color: #CCE5FF;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+    height: 300px;
+    line-height: 1;
+    margin-bottom: 30px;
+    position: relative;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
 }
 
 #wrap {
-  min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -60px;
+    min-height: 100%;
 }
 
-#main {
-  overflow:auto;
-  padding-bottom:150px; /* this needs to be bigger than footer height*/
+.navbar-wrapper {
+    left: 0;
+    margin-bottom: -90px;
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
 }
 
-.footer {
-  position: relative;
-  
-  margin-top: -150px; /* negative value of footer height */
-  height: 150px;
-  clear:both;
-  padding-top:20px;
-  text-align:center;
-} 
+.header-empty-top {
+    height: 125px;
+}
 
-  #sidebar {
-      border-right-color: #e8e8e8;
-      border-right-style: solid;
-      border-right-width: 2px;
-      margin-top: 58px;
-      padding-right: 10px;
-      margin-right: 10px;
-      margin-left: 10px;
-      float: left;
-      width: 220px;
-    }
+.header-caption {
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 550px;
+    padding: 0 20px;
+    position: static;
+}
+
+#push, #footer {
+    height: 110px;
+}
+
+#footer {
+    background-color: #1b1b1b;
+    background-image: -moz-linear-gradient(top, #003366, #003366);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#003366), to(#003366));
+    background-image: -webkit-linear-gradient(top, #003366, #003366);
+    background-image: -o-linear-gradient(top, #003366, #003366);
+    background-image: linear-gradient(to bottom, #003366, #003366);
+    background-repeat: repeat-x;
+    border-color: #003366;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+
+    margin-top: 70px;
+    padding: 30px;
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer li {
+    list-style: none outside none;
+}
+#footer h3{
+    color: #ffffff
+}
+li {
+    line-height: 20px;
+}
+
+
+ul, ol {
+    margin: 0 0 10px 25px;
+    padding: 0;
+}
+
+.LogOff {
+    clear: both;
+    color: #333333;
+    display: block;
+    font-weight: normal;
+    line-height: 20px;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+
+.LogOff:hover {
+    color: white;
+    background-color: #0081C2;
+    background-image: linear-gradient(to bottom,#0088CC);
+    background-repeat: repeat-x;
+    text-decoration: none;
+}
+
+.icon{
+    max-width:40px;
+}
+
+.navbar .nav .dropdown-toggle .caret {
+    margin-top: 12px;
+}
+
+.nav > li > a {
+    display: block;
+    line-height: 30px;
+}
+
+.ContextLink {
+    display: block;
+    margin: 5px 0px 10px;
+    padding: 5px;
+    line-height: 25px;
+    text-align: left;
+    border-color: white;
+    background-color:  #003366;
+    color:white;
+    font-weight: bold;
+    font-size: medium;
+}
+.ContextLink img {
+   max-width: 20px;
+}
+
+.ContextLink:hover {
+    display: block;
+     margin: 5px 0px 10px;
+     padding: 5px;
+    line-height: 25px;
+    text-align: left;
+    border-color: #003366;
+    color:  #003366;
+    background-color:  skyblue;
+}
+
+.ContextLinkActive{
+    display: block;
+     margin: 5px 0px 10px;
+     padding: 5px;
+    line-height: 25px;
+    text-align: left;
+    border-color: #003366;
+    color:  #003366;
+    background-color:  skyblue;
+}
+
+.accordion-group {
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+          font-size: large;
+}
+
+.thumbnail-info{
+    display: block;
+}
+
+.thumbnail-info>li{
+    display: block;
+    list-style: none;
+    line-height: 30px;
+}
+
+.form-label{
+    font-size: 15px;
+}
+
+.bold-label{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ngViewport {
+    overflow: hidden !important;
+    min-height: 100% !important;
+    height: 100% !important;
+}
+
+
+ .navbar-static .navbar-inner {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom:5px; /* edited*/
+  }
+
+ .navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover {
+  color: #ffffff;
+  background-color:#003366;/*Edited*/
+}
+
+ /*Edited*/
+.navbar-inverse .navbar-inner {
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #99CCFF, #99CCFF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#99CCFF), to(#99CCFF));
+  background-image: -webkit-linear-gradient(top, #99CCFF, #99CCFF);
+  background-image: -o-linear-gradient(top, #99CCFF, #99CCFF);
+  background-image: linear-gradient(to bottom, #99CCFF, #99CCFF);
+  background-repeat: repeat-x;
+  border-color: #99CCFF;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+}

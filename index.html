@@ -1,171 +1,144 @@
 ﻿<!--<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app>-->
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="pmModule">
 <head>
-    <title></title>
+    <title>Apartment Maintenance</title>
     <link href="Scripts/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="Scripts/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="Styles/navbar.css" rel="stylesheet" />
+    <!--<link href="Styles/navbar.css" rel="stylesheet" />-->
     <script src="Scripts/jquery-2.0.3.min.js"></script>
     <script src="Scripts/bootstrap/js/bootstrap.js"></script>
     <script src="Scripts/angular/angular.js"></script>
     <script src="Scripts/angular/ui-bootstrap-tpls-0.7.0.js"></script>
+    <script src="App/app.js"></script>
     <link rel="stylesheet" type="text/css" href="Styles/Content.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <div id="navbar">
-        <div class="navbar navbar-inverse navbar-blue navbar-fixed-top">
-            <div class="navbar-inner">
+    <div id="wrap">
+        <div ng-cloak>
+            <!-- NAVBAR-->
+            <div class="navbar-wrapper">
+                <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
                 <div class="container">
-                    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"
-                        type="button">
-                        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
-                        </span>
-                    </button>
-                    <a href="./index.html" class="brand">Marsh Property Management</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class=""><a href="./index.html">Find a Home</a> </li>
-                            <li class=""><a href="./getting-started.html">Residential Portal</a> </li>
-                            <li class=""><a href="./scaffolding.html">About Marsh</a> </li>
-                            <li class=""><a href="./base-css.html">Contact us</a> </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right ">
-                            <li class="inline"><a href="../about">
-                                <button type="button" class="btn btn-primary">
-                                    Login</button></a> </li>
-                            <li class="inline"><a href="../about">
-                                <button type="button" class="btn btn-primary">
-                                    Register</button></a> </li>
-                        </ul>
+                    <div class="navbar navbar-inverse">
+                        <div class="navbar-inner">
+                            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="brand" href="#">
+                                <img class="icon" src="Images/blue-house-hi.png">
+                            </a>
+                            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                            <div class="nav-collapse collapse" nav-highlight-active>
+                                <ul class="nav">
+                                    <li data-match-route="/Home/Index" data-match-route-default=""><a href="#/Home">Home</a></li>
+                                    <li data-match-route="/AboutUs"><a href="#/AboutUs">About Us</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
+                                        <ul class="dropdown-menu span2">
+                                            <li class="nav-header">Mandatory masters</li>
+                                            <li><a href="#/Masters/Apartments">Apartment</a></li>
+                                            <li><a href="#/Masters/Tenants">Tenant</a></li>
+                                            <li><a href="#/Masters/Amenities">Amenities</a></li>
+                                            <li class="divider"></li>
+                                            <li class="nav-header">Utility masters</li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
+                                        <ul class="dropdown-menu span3">
+                                            <li class="nav-header">Tenancy</li>
+                                            <li><a href="#">Start Tenancy</a></li>
+                                            <li><a href="#">Add tenancy agreement</a></li>
+                                            <li><a href="#">End tenancy</a></li>
+                                            <li class="divider"></li>
+                                            <li class="nav-header">Payments</li>
+                                            <li><a href="#">Rent Payments</a></li>
+                                            <li><a href="#">Service Payments</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <div style="min-width: 100px">
+                                </div>
+
+
+                                <ul login-partial-binder="Account/LoginPartial" id="loginPartial" class="nav pull-right">
+                                </ul>
+                            </div>
+                            <!-- /.navbar-inner -->
+                        </div>
+                        <!-- /.navbar -->
                     </div>
+                    <!-- /.container -->
                 </div>
+                <!-- /.navbar-wrapper -->
+            </div>
+            <!-- Header
+    ================================================== -->
+
+            <header class="header">
+                <!--<img src="" alt="">-->
+                 <div ng-controller="homePageCarousalController">
+                            <div style="height: 305px">
+                                <carousel interval="myInterval">
+                                <slide ng-repeat="slide in slides" active="slide.active">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    <div class="carousel-caption">
+                                      <h4>Slide {{$index}}</h4>
+                                      <p>{{slide.text}}</p>
+                                    </div>
+                                </slide>
+                            </carousel>
+                            </div>
+                        </div>
+                <div class="container">
+                    <div class="header-empty-top">
+                        <!-- carousal -->
+                       
+                        <!-- End carousal-->
+                    </div>
+                    <!-- <div class="row-fluid">
+                        <div class="span6">
+                            <div class="header-caption">
+                                <h2>AMS</h2>
+                                <p class="lead hidden-phone">
+                                    AMS lets u to manage things
+                                </p>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="header-caption">
+                                <div>
+                                    <a class="btn btn-large btn-success" href="/us/en/Rings">Start your quest!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                </div>
+            </header>
+            <!-- /.header -->
+        </div>
+        <div class="content">
+            <div class="container">
+                <!-- To Check MVC Caching -->
+
+                <div ng-view>
+                </div>
+
+
             </div>
         </div>
+
     </div>
-    <div>
+
+    <div id="push">
     </div>
-    <!-- HeadInfo -->
-  <!--  <div class="container1">
-        <h1>
-            PropertyManagement</h1>
-        <p class="lead">
-            OneStop Solution under Cloud</p>
-    </div>-->
-    <div class="carousel slide" id="carousel-489273">
-        <ol class="carousel-indicators">
-            <li data-slide-to="0" data-target="#carousel-489273"></li>
-            <li data-slide-to="1" data-target="#carousel-489273"></li>
-            <li data-slide-to="2" data-target="#carousel-489273" class="active"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item">
-                <img alt="" src="Images/ban2.jpg" />
-                <div class="carousel-caption">
-                    <h4>
-                        First Thumbnail label.
-                    </h4>
-                    <p class="pCarousel">
-                        First Thumbnail label.Stack Overflow is a question and answer site for professional
-                        and enthusiast programmers. It's 100% free, no registration required.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img alt="" src="Images/home.jpg" />
-                <div class="carousel-caption">
-                    <h4>
-                        Second Thumbnail label
-                    </h4>
-                    <p class="pCarousel">
-                        First Thumbnail label.Stack Overflow is a question and answer site for professional
-                        and enthusiast programmers. It's 100% free, no registration required.
-                    </p>
-                </div>
-            </div>
-            <div class="item active">
-                <img alt="" src="Images/ban3.jpg" />
-                <div class="carousel-caption">
-                    <h4>
-                        Third Thumbnail label
-                    </h4>
-                    <p class="pCarousel">
-                        First Thumbnail labelStack Overflow is a question and answer site for professional
-                        and enthusiast programmers. It's 100% free, no registration required.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <a class="left carousel-control" href="#carousel-489273" data-slide="prev"><span
-            class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
-                href="#carousel-489273" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
-                </span></a>
-    </div>
-    <div class="row">
-        <div class="span4">
-            <h2>
-                Everything made Online</h2>
-            <img src="Images/download.jpg" />
-            <p>
-                In today's world internet is the most popular way of connecting with the people.
-                At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a>
-                you will learn the essential of web development technologies along with real life
-                practice example, so that you can create your own website to connect with the people
-                around the world.</p>
-            <p>
-                <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success btn-medium">
-                    Click Here »</a></p>
-        </div>
-        <div class="span4">
-            <h2>
-                Rent</h2>
-            <img src="Images/rent.jpg" />
-            <p>
-                In today's world internet is the most popular way of connecting with the people.
-                At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a>
-                you will learn the essential of web development technologies along with real life
-                practice example, so that you can create your own website to connect with the people
-                around the world.</p>
-            <p>
-                <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success btn-medium">
-                    Click Here »</a></p>
-        </div>
-        <div class="span4">
-            <h2>
-                Lease</h2>
-            <img src="Images/leasing.jpg" />
-            <p>
-                In today's world internet is the most popular way of connecting with the people.
-                At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a>
-                you will learn the essential of web development technologies along with real life
-                practice example, so that you can create your own website to connect with the people
-                around the world.</p>
-            <p>
-                <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                    class="btn btn-success btn-medium">Click Here »</a></p>
-        </div>
-        <div class="span4">
-            <h2>
-                Bootstrap</h2>
-            <img src="Images/leasing.jpg" />
-            <p>
-                In today's world internet is the most popular way of connecting with the people.
-                At <a href="http://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a>
-                you will learn the essential of web development technologies along with real life
-                practice example, so that you can create your own website to connect with the people
-                around the world.</p>
-            <p>
-                <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                    class="btn btn-success btn-medium">Click Here »</a></p>
-        </div>
-    </div>
-    <!--Body content-->
-    <footer class="footer"> @copyright 2013<ul>
-<li><a href="" class="icon facebook">Facebook</a></li>
-<li><a href="" class="icon twitter">Twitter</a></li>
-<li><a href="" class="icon googleplus">Google Plus</a></li>
-</ul></footer>
 </body>
 </html>
