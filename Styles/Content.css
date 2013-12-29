@@ -212,19 +212,19 @@ ul, ol {
 }
 
 
- .navbar-static .navbar-inner {
+ /*.navbar-static .navbar-inner {
     padding-right: 10px;
     padding-left: 10px;
-    padding-bottom:5px; /* edited*/
+    padding-bottom:5px; 
   }
 
  .navbar-inverse .nav > li > a:focus,
 .navbar-inverse .nav > li > a:hover {
   color: #ffffff;
-  background-color:#003366;/*Edited*/
+  background-color:#003366;
 }
 
- /*Edited*/
+ 
 .navbar-inverse .navbar-inner {
   background-color: #1b1b1b;
   background-image: -moz-linear-gradient(top, #99CCFF, #99CCFF);
@@ -235,4 +235,4 @@ ul, ol {
   background-repeat: repeat-x;
   border-color: #99CCFF;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
-}
+}*/

@@ -52,9 +52,9 @@
                             </div>
 
 
-                                <div class="toolbar-auth">
-                                    <button class="button-toolbar" data-ng-hide="isAuthenticated()" data-ng-click="showLogin()"><i class="fa fa-lock"></i><span class="toolbar-auth-button-text">&nbsp;{{'LOGIN' }}</span></button>
-                                    <button class="button-toolbar" data-ng-hide="isAuthenticated()" data-ng-click="showRegistration()"><i class="fa fa-users"></i><span class="toolbar-auth-button-text">&nbsp;{{'REGISTER' }}</span></button>
+                                <ul class="nav float-right">
+                                    <li data-ng-hide="isAuthenticated()" data-ng-click="showLogin()"><a href="">Login</a></li>
+                                    <li data-ng-hide="isAuthenticated()" data-ng-click="showRegistration()"><i class="fa fa-users"></i><a >&nbsp;Register</a></li>
                                     <span class="dropdown">
                                         <span class="button-toolbar dropdown-toggle" data-ng-show="isAuthenticated()">
                                             <i class="fa fa-user"></i><span class="hidden-sm toolbar-user-greeting-text">&nbsp;{{currentUser.FirstName}} &nbsp; <span class="caret"></span></span>
@@ -64,7 +64,7 @@
                                             <li><a role="menuitem" tabindex="-1" data-ng-click="logout()"><i class="fa fa-sign-out"></i>&nbsp;{{"LOGOUT"}}</a></li>
                                         </ul>
                                     </span>
-                                </div>
+                                </ul>
                         </div>
                         <!-- /.navbar-inner -->
                     </div>
