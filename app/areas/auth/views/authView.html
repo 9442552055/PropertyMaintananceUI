@@ -34,10 +34,10 @@
                                 </form>
                                 <div class="topMarginMedium">
                                     <div class="row">
-                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"GOTOREGISTERTEXT" }}</a></div>
+                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"Don,t have an Account?Register Here" }}</a></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12"><a ng-click="goToPassword()">{{"GOTOLOSTPASSWORDTEXT" }}</a></div>
+                                        <div class="col-md-12"><a ng-click="goToPassword()">{{"Forgot Password?" }}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                             <div class="col-md-7" >
                                                 <h2 class="bottomMarginMedium">{{'REGISTER' }}</h2>
                                                 <div class="bottomMarginSmall">
-                                                    <input type="email" name="email" id="email" placeholder="{{'EMAILADDRESS' }}" data-ng-model="registerUser.email" data-ng-class="validation.email" data-ng-minlength="6" data-ng-maxlength="100" required>
+                                                    <input type="email" name="email" id="email" placeholder="{{'EMAILADDRESS' }}" data-ng-model="registerUser.email" data-ng-class="validation.email" data-ng-minlength="6" data-ng-maxlength="100" required/>
                                                     <div class="form-error" data-ng-show="!RegisterForm.email.$valid && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"EmailIdRequired" }}</div>
                                                 </div>
                                                 <div class="bottomMarginMedium">
@@ -70,7 +70,7 @@
                                                     <div class="form-error" data-ng-show="(registerUser.email != registerUser.confirmEmail) && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"ConfirmationEmail" }}</div>
                                                     </div>
                                                 <div class="bottomMarginSmall">
-                                                    <input type="password" name="password" id="registerpassword" placeholder="{{'PASSWORD' }}" data-ng-model="registerUser.password" required>
+                                                    <input type="password" name="password" id="registerpassword" placeholder="{{'PASSWORD' }}" data-ng-model="registerUser.password" required/>
                                                     <div class="form-error" data-ng-show="(!RegisterForm.password.$valid) && showErrors"><i class="fa fa-warning"></i>&nbsp;{{"PasswordRequired" }}</div>
                                                 </div>
                                                 <div class="bottomMarginMedium">
@@ -107,10 +107,10 @@
                                       </form>
                                  <div class="topMarginMedium">
                                     <div class="row">
-                                        <div class="col-md-12"><a data-ng-click="goToLogin()">{{"GOTOLOGINTEXT" }}</a></div>
+                                        <div class="col-md-12"><a data-ng-click="goToLogin()">{{"Login" }}</a></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12"><a data-ng-click="goToPassword()">{{"GOTOLOSTPASSWORDTEXT" }}</a></div>
+                                        <div class="col-md-12"><a data-ng-click="goToPassword()">{{"ForgotPassword?" }}</a></div>
                                     </div>
                                 </div>
                                  </div>
@@ -134,7 +134,7 @@
                                     </div>
                                     <!--<input name="requestPassword" id="requestPassword" type="submit" ng-click="requestPassword()" ng-disabled="form.$invalid" class="btn btn-success" value="Request password">-->
                                     <div class="topMarginMedium">
-                                        <button type="submit" data-ng-click="resetPassword()" class="button-primary button-success button-auth">{{"REQUESTNEWPASSWORD" }}</button>
+                                        <button type="submit" data-ng-click="resetPassword()" class="button-primary button-success button-auth">{{"RequestNewPassword" }}</button>
                                         <button class="button-primary button-dark button-auth" ng-click="clearPassword()">{{"CLEAR" }}</button>
                                         <button class="button-primary button-danger button-auth" ng-click="cancelPassword()">{{"CANCEL" }}</button><!--data-ng-disabled="passwordLostForm.$invalid"-->
                                         <div class="toolbar-loader hidden-xs hidden-sm">
@@ -144,10 +144,10 @@
                                 </form>
                                 <div class="topMarginMedium">
                                     <div class="row">
-                                        <div class="col-md-12"><a ng-click="goToLogin()">{{"GOTOLOGINTEXT" }}</a></div>
+                                        <div class="col-md-12"><a ng-click="goToLogin()">{{"login" }}</a></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"GOTOREGISTERTEXT" }}</a></div>
+                                        <div class="col-md-12"><a ng-click="goToRegister()">{{"Register" }}</a></div>
                                     </div>
                                 </div>
                             </div>

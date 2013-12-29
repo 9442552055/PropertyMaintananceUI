@@ -12,54 +12,59 @@
     <link href="Styles/auth.css" rel="stylesheet" />
     <link href="Styles/multitab.css" rel="stylesheet" />
     <link href="Styles/modal.css" rel="stylesheet" />
-
+    <link href="Styles/Carousel.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrap">
-        <div data-ui-view="toolbarView"></div>
+        <div data-ui-view="toolbarView">
+        </div>
         <!--data-ng-class="{'toolbar-moved':$root.enable_menu==true}"-->
         <!-- <div data-ui-view="toolbarMobileView"></div>-->
-        <div data-ui-view="sidebarView"></div>
+        <div data-ui-view="sidebarView">
+        </div>
         <div class="content">
             <div class="container">
-                <div data-ui-view="contentView"></div>
+                <div data-ui-view="contentView">
+                </div>
                 <!-- data-ng-class="{'content-moved':$root.enable_menu==true}"-->
             </div>
         </div>
-
-    </div>
-
-    <div id="push">
+        <div id="push">
+        </div>
+        <div id="footer">
+            <footer>
+        <div class="row">
+            <div class="col-md-4">
+                <p>&copy; Copyright@2013 Marsh</p>
+            </div>
+           
+        </div>
+    </footer>
+        </div>
     </div>
     <div id="scripts">
         <script src="Scripts/jquery-2.0.3.min.js"></script>
-
         <script src="Scripts/bootstrap/js/bootstrap.js"></script>
         <script src="Scripts/angular/angular.js"></script>
         <script src="Scripts/angular/ui-bootstrap-tpls-0.7.0.js"></script>
         <script src="Scripts/angular/angular-ui-router.js"></script>
         <script src="scripts/angular/angular-sanitize.js"></script>
         <script src="app/app.js"></script>
-
         <!-- shared scripts -->
         <script src="app/areas/shared/sharedModule.js"></script>
         <script src="app/areas/shared/sharedConstants.js"></script>
         <script src="app/areas/shared/services/commonService.js"></script>
-        
         <script src="Scripts/jquery.ba-throttle-debounce.js"></script>
         <script src="app/areas/shared/services/debounceService.js"></script>
-
         <script src="app/areas/shared/services/loggerService.js"></script>
         <script src="app/areas/shared/services/menuService.js"></script>
         <script src="app/areas/shared/services/sessionStore.js"></script>
         <script src="app/areas/shared/services/spinnerInterceptor.js"></script>
-
         <!-- screen structure scripts-->
         <script src="app/areas/screenstructure/screenstructureModule.js"></script>
         <script src="app/areas/screenstructure/controllers/toolbarController.js"></script>
         <script src="app/areas/screenstructure/controllers/mainMenuController.js"></script>
         <script src="app/areas/screenstructure/controllers/footerController.js"></script>
-
         <!-- Auth module scripts -->
         <script src="app/areas/auth/authModule.js"></script>
         <script src="app/areas/auth/services/authCheckService.js"></script>
@@ -67,11 +72,9 @@
         <script src="app/areas/auth/services/authInterceptor.js"></script>
         <script src="app/areas/auth/services/vcRecaptchaService.js"></script>
         <script src="app/areas/auth/services/authService.js"></script>
-
         <script src="app/areas/auth/directives/vcRecaptchadirective.js"></script>
         <script src="app/areas/auth/directives/passwordValidator.js"></script>
         <script src="app/areas/auth/directives/tmlAuthorizePanel/tmlAuthorize.js"></script>
-
         <script src="app/areas/auth/controllers/authController.js"></script>
         <script src="app/areas/auth/controllers/authModalController.js"></script>
         <script src="app/areas/auth/controllers/changePasswordDialogController.js"></script>

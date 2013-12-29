@@ -25,18 +25,13 @@
       background-repeat: repeat-x;
       border-color: #79bedd;*/
     background-color: #1b1b1b;
-    background-image: -moz-linear-gradient(top, #CCE5FF, #ffffff);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#CCE5FF), to(#ffffff));
-    background-image: -webkit-linear-gradient(top, #CCE5FF, #ffffff);
-    background-image: -o-linear-gradient(top, #CCE5FF, #ffffff);
-    background-image: linear-gradient(to bottom, #CCE5FF, #ffffff);
     background-repeat: repeat-x;
-    border-color: #CCE5FF;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
-    height: 300px;
-    line-height: 1;
-    margin-bottom: 30px;
-    position: relative;
+	border-color: #CCE5FF;
+	height: 300px;
+	line-height: 1;
+	margin-bottom: 30px;
+	position: relative;
+	background-image: linear-gradient(to bottom, #CCE5FF, #ffffff);
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
@@ -71,21 +66,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 
 #push, #footer {
     height: 110px;
+    color:White;
+    bottom:0px;
+    text-align:center;
 }
 
 #footer {
     background-color: #1b1b1b;
-    background-image: -moz-linear-gradient(top, #003366, #003366);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#003366), to(#003366));
-    background-image: -webkit-linear-gradient(top, #003366, #003366);
-    background-image: -o-linear-gradient(top, #003366, #003366);
-    background-image: linear-gradient(to bottom, #003366, #003366);
     background-repeat: repeat-x;
-    border-color: #003366;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
-
-    margin-top: 70px;
-    padding: 30px;
+	border-color: #003366;
+	margin-top: 70px;
+	padding: 30px;
+	background-image: linear-gradient(to bottom, #003366, #003366);
 }
 
 #footer a {
@@ -236,3 +228,9 @@ ul, ol {
   border-color: #99CCFF;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }*/
+
+.carousel
+{
+	background-size: cover 
+}
+	
